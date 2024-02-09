@@ -1,0 +1,65 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!-- Definimos como es la vista explicita de la lista -->
+    <record model="ir.ui.view" id="lista_tareas.list">
+      <field name="name">lista_tareas list</field>
+      <field name="model">lista_tareas.lista_tareas</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="tarea"/>
+          <field name="prioridad"/>
+          <field name="urgente"/>
+          <field name="realizada"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.actions.act_window" id="lista_tareas.action_window">
+      <field name="name">Listado de tareas pendientes</field>
+      <field name="res_model">lista_tareas.lista_tareas</field>
+      <field name="view_mode">tree,kanban,form,calendar</field>
+    </record>
+    <!-- Vista kanban-->
+    <record id="lista_tareas.lista_tareas_kanban" model="ir.ui.view">
+      <field name="name">lista_tareas list</field>
+      <field name="model">lista_tareas.lista_tareas</field>
+      <field name="arch" type="xml">
+        <!-- Agrupamos por el atributo prioridad -->
+        <kanban default_group_by="prioridad">
+          <!-- Indicamos que atributos usaremos en la vista -->
+          <field name="tarea" />
+          <field name="imagenTarea"/>
+          <!-- Plantilla para indicar como es la tarjata kanban -->
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_card oe_kanban_global_click" style="height:19mm;">
+                <field name="tarea" />
+              </div>
+              <div class="o_kanban_image_inner_pic">
+                <img alt="Avatar" t-att-src="kanban_image('lista_tareas.lista_tareas', 'imagenTarea', record.id.raw_value)" style="width:15mm; height:15mm;" />
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <!-- Lista calendar -->
+    <record id="lista_tareas.lista_tareas_calendar" model="ir.ui.view">
+      <field name="model">lista_tareas.lista_tareas</field>
+      <field name="arch" type="xml">
+        <calendar date_start="fechaInicio" date_delay="duracion" color="realizada" mode="month">
+          <field name="tarea"/>
+        </calendar>
+      </field>
+    </record>
+
+    <!--Top menu item -->
+    <menuitem name="Listado de tareas" id="lista_tareas.menu_root"/>
+
+    <!--Categorias del menu -->
+    <menuitem name="Opciones Lista Tareas" id="lista_tareas.menu_1" parent="lista_tareas.menu_root"/>
+
+    <!-- Acciones -->
+    <menuitem name="Mostrar lista" id="lista_tareas.menu_1_list" parent="lista_tareas.menu_1" action="lista_tareas.action_window"/>
+  </data>
+</odoo>
