@@ -33,6 +33,7 @@
                   </group>
                   <group>
                       <field name="numColegiado" />
+                      <field name="diagnostico" />
                   </group>
                 </group>
             </form>

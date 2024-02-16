@@ -30,6 +30,9 @@
                     <field name="nombre" />
                     <field name="apellidos" /> 
                   </group>
+                  <group>
+                      <field name="diagnostico" />
+                  </group>
                 </group>
             </form>
         </field>

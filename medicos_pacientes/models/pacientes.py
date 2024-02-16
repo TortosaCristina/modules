@@ -12,6 +12,8 @@ class pacientes(models.Model):
 
     nombreCompleto = fields.Text(compute="_nombre_completo")
 
+    diagnostico = fields.One2many('medicos_pacientes.diagnostico','paciente')
+
     @api.depends('nombre','apellidos')
     def _nombre_completo(self):
         for record in self:
