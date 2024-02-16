@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_medicos_pacientes_medicos,medicos_pacientes.medicos,model_medicos_pacientes_medicos,base.group_user,1,1,1,1
+access_medicos_pacientes_pacientes,medicos_pacientes.pacientes,model_medicos_pacientes_pacientes,base.group_user,1,1,1,1
+access_medicos_pacientes_diagnostico,medicos_pacientes.diagnostico,model_medicos_pacientes_diagnostico,base.group_user,1,1,1,1

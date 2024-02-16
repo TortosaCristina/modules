@@ -1,0 +1,70 @@
+<odoo>
+  <data>
+    <!-- Tipos de vista que vamos a tener -->
+    <record model="ir.actions.act_window" id="diagnosticos_action_window">
+      <field name="name">Diagnosticos</field>
+      <field name="res_model">medicos_pacientes.diagnostico</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Vista en arbol -->
+    <record model="ir.ui.view" id="medicos_pacientes_diagnostico_list">
+      <field name="name">medicos_pacientes_diagnostico list</field>
+      <field name="model">medicos_pacientes.diagnostico</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="numDiagnostico"/>
+          <field name="medico"/>
+          <field name="paciente"/>
+          <field name="sintomas"/>
+          <field name="diagnostico"/>
+        </tree>
+      </field>
+    </record>
+    
+     <!-- Vista de formulario -->
+    <record id="medicos_pacientes_form" model="ir.ui.view">
+        <field name="name">Formulario Diagnosticos</field>
+        <field name="model">medicos_pacientes.diagnostico</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="numDiagnostico" />
+                    </group>
+                </group>
+                <group>
+                  <group>
+                      <field name="medico"/>
+                  </group>
+                  <group>
+                      <field name="paciente"/>
+                  </group>
+                </group>
+                <group>
+                  <group>
+                      <field name="sintomas"/>
+                  </group>
+                  <group>
+                      <field name="diagnostico"/>
+                  </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- menu categories -->
+    <menuitem name="Lista de Diagnosticos" id="menu_item_diagnosticos" parent="gestion_medicos_pacientes_diagnostico" action="diagnosticos_action_window"/>
+<!--
+    
+    <menuitem name="Menu 2" id="medicos_pacientes.menu_2" parent="medicos_pacientes.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="medicos_pacientes.menu_1_list" parent="medicos_pacientes.menu_1"
+              action="medicos_pacientes.action_window"/>
+    <menuitem name="Server to list" id="medicos_pacientes" parent="medicos_pacientes.menu_2"
+              action="medicos_pacientes.action_server"/>
+-->
+  </data>
+</odoo>

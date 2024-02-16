@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- Tipos de vista que vamos a tener -->
+    <record model="ir.actions.act_window" id="medicos_action_window">
+      <field name="name">Medicos</field>
+      <field name="res_model">medicos_pacientes.medicos</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Vista en arbol -->
+    <record model="ir.ui.view" id="medicos_pacientes_medicos_list">
+      <field name="name">medicos_pacientes_medicos list</field>
+      <field name="model">medicos_pacientes.medicos</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombre"/>
+          <field name="apellidos"/>
+          <field name="numColegiado"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Vista de formulario -->
+    <record id="medicos_pacientes_form" model="ir.ui.view">
+        <field name="name">Formulario Medicos</field>
+        <field name="model">medicos_pacientes.medicos</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="nombre" />
+                    </group>
+                    <group>
+                        <field name="apellidos" />
+                    </group>
+                </group>
+                <group>
+                    <group>
+                        <field name="numColegiado" />
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>    
+
+    <!-- menu categories -->
+    <menuitem name="Lista de Medicos" id="menu_item_medicos" parent="gestion_medicos_pacientes_diagnostico" action="medicos_action_window"/>
+<!--
+    
+    <menuitem name="Menu 2" id="medicos_pacientes.menu_2" parent="medicos_pacientes.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="medicos_pacientes.menu_1_list" parent="medicos_pacientes.menu_1"
+              action="medicos_pacientes.action_window"/>
+    <menuitem name="Server to list" id="medicos_pacientes" parent="medicos_pacientes.menu_2"
+              action="medicos_pacientes.action_server"/>
+-->
+  </data>
+</odoo>
