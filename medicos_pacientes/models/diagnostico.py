@@ -6,7 +6,7 @@ class diagnostico(models.Model):
     _description = 'medicos_pacientes.diagnostico'
 
     numDiagnostico = fields.Integer()
-    medico = fields.Many2one('medicos_pacientes.medicos')
-    paciente = fields.Many2one('medicos_pacientes.pacientes')
+    medico = fields.Many2one(comodel_name='medicos_pacientes.medicos')
+    paciente = fields.Many2one(comodel_name='medicos_pacientes.pacientes')
     sintomas = fields.Text('Sintomas')
     diagnostico = fields.Text()

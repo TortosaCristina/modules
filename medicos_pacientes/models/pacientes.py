@@ -15,7 +15,7 @@ class pacientes(models.Model):
     @api.depends('nombre','apellidos')
     def _nombre_completo(self):
         for record in self:
-            record.nombreCompleto = f"{self.nombre} {self.apellidos}"
+            record.nombreCompleto = f"{record.nombre} {record.apellidos}"
     
     
 
