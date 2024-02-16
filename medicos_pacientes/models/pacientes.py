@@ -2,9 +2,10 @@
 from odoo import models, fields, api
 
 class pacientes(models.Model):
-    _rec_name = 'nombreCompleto'
     _name = 'medicos_pacientes.pacientes'
     _description = 'medicos_pacientes.pacientes'
+    _rec_name = 'nombreCompleto'
+
 
     nombre = fields.Text('Nombre')
     apellidos = fields.Text('Apellidos')
@@ -14,7 +15,7 @@ class pacientes(models.Model):
     @api.depends('nombre','apellidos')
     def _nombre_completo(self):
         for record in self:
-            record.nombreCompleto = self.nombre + " " + self.apellidos
+            record.nombreCompleto = f"{self.nombre} {self.apellidos}"
     
     
 

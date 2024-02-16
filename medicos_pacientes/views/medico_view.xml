@@ -21,23 +21,19 @@
     </record>
 
     <!-- Vista de formulario -->
-    <record id="medicos_pacientes_form" model="ir.ui.view">
+    <record id="medicos_pacientes.medicos_form" model="ir.ui.view">
         <field name="name">Formulario Medicos</field>
         <field name="model">medicos_pacientes.medicos</field>
         <field name="arch" type="xml">
             <form>
                 <group>
-                    <group>
-                        <field name="nombre" />
-                    </group>
-                    <group>
-                        <field name="apellidos" />
-                    </group>
-                </group>
-                <group>
-                    <group>
-                        <field name="numColegiado" />
-                    </group>
+                  <group>
+                      <field name="nombre" />
+                      <field name="apellidos" />
+                  </group>
+                  <group>
+                      <field name="numColegiado" />
+                  </group>
                 </group>
             </form>
         </field>

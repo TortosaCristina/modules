@@ -23,7 +23,7 @@
     </record>
     
      <!-- Vista de formulario -->
-    <record id="medicos_pacientes_form" model="ir.ui.view">
+    <record id="medicos_pacientes.medicos_pacientes_form" model="ir.ui.view">
         <field name="name">Formulario Diagnosticos</field>
         <field name="model">medicos_pacientes.diagnostico</field>
         <field name="arch" type="xml">
