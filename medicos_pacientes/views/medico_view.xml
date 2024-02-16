@@ -45,16 +45,6 @@
 
     <!-- menu categories -->
     <menuitem name="Lista de Medicos" id="menu_item_medicos" parent="gestion_medicos_pacientes_diagnostico" action="medicos_action_window"/>
-<!--
-    
-    <menuitem name="Menu 2" id="medicos_pacientes.menu_2" parent="medicos_pacientes.menu_root"/>
--->
-    <!-- actions -->
-<!--
-    <menuitem name="List" id="medicos_pacientes.menu_1_list" parent="medicos_pacientes.menu_1"
-              action="medicos_pacientes.action_window"/>
-    <menuitem name="Server to list" id="medicos_pacientes" parent="medicos_pacientes.menu_2"
-              action="medicos_pacientes.action_server"/>
--->
+
   </data>
 </odoo>
