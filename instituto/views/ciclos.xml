@@ -1,0 +1,21 @@
+<odoo>
+  <record model="ir.actions.act_window" id="ciclos_action_window">
+    <field name="name">Ciclos</field>
+    <field name="res_model">instituto.ciclos</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+  <record model="ir.ui.view" id="instituto_ciclos_list">
+    <field name="name">instituto_ciclos list</field>
+    <field name="model">instituto.ciclos</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="ciclo"/>
+        <field name="modulos"/>
+      </tree>
+    </field>
+  </record>
+  <menuitem name="Instituto" id="instituto_base_menu"/>
+  <menuitem name="Menu Estudios" id="estudios_instituto" parent="instituto_base_menu"/>
+
+  <menuitem name="Ciclos" id="menu_item_ciclos" parent="estudios_instituto" action="ciclos_action_window"/>
+</odoo>

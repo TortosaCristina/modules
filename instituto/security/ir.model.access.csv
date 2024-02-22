@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_instituto_ciclos_default,instituto.ciclos_default,model_instituto_ciclos,,1,0,0,0
+access_instituto_modulos_default,instituto.modulos_default,model_instituto_modulos,,1,0,0,0
+access_instituto_alumnos_default,instituto.alumnos_default,model_instituto_alumnos,,1,0,0,0
+access_instituto_profesores_default,instituto.profesores_default,model_instituto_profesores,,0,0,0,0
+
+access_instituto_ciclos_director,instituto.ciclos_director,model_instituto_ciclos,group_director,1,1,1,1
+access_instituto_modulos_director,instituto.modulos_director,model_instituto_modulos,group_director,1,1,1,1
+access_instituto_alumnos_director,instituto.alumnos_director,model_instituto_alumnos,group_director,1,1,1,1
+access_instituto_profesores_director,instituto.profesores_director,model_instituto_profesores,group_director,1,1,1,1
+
+access_instituto_ciclos_profesor,instituto.ciclos_profesor,model_instituto_ciclos,group_profesor,1,1,1,1
+access_instituto_modulos_profesor,instituto.modulos_profesor,model_instituto_modulos,group_profesor,1,1,1,1
+access_instituto_alumnos_profesor,instituto.alumnos_profesor,model_instituto_alumnos,group_profesor,1,1,1,1
+access_instituto_profesores_profesor,instituto.profesores_profesor,model_instituto_profesores,group_profesor,1,0,0,0

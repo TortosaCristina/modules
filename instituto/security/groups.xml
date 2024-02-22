@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Aqui definimos como se forma el grupo de seguridad "grupo_director"
+        basado en "res.groups", que es el modelo de los grupos de Odoo -->
+    <record id="group_director" model="res.groups">
+        <!-- El field "name" indica como se mostrara en la interfaz. 
+            En este caso se verá como "Director" -->
+        <field name="name">Director</field>
+        <!-- El field "users" indica que los usuarios de este grupo se incluyan en este
+            grupo de seguirdad. 
+            En este caso con "base.user_admin" estamos incluyendo a los administradores --> 
+        <field name="users" eval="[(4, ref('base.user_admin'))]" />
+    </record>
+    <record id="group_profesor" model="res.groups">
+        <field name="name">Profesor</field>
+    </record>
+</odoo>

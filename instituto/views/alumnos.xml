@@ -1,0 +1,22 @@
+<odoo>
+    <record model="ir.actions.act_window" id="alumnos_action_window">
+        <field name="name">Alumnos</field>
+        <field name="res_model">instituto.alumnos</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.ui.view" id="instituto_alumnos_list">
+        <field name="name">instituto_alumnos list</field>
+        <field name="model">instituto.alumnos</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nombre"/>
+                <field name="apellidos"/>
+                <field name="dni"/>
+                <field name="modulos"/>
+            </tree>
+        </field>
+    </record>
+  <menuitem name="Menu Personas" id="personas_instituto" parent="instituto_base_menu"/>
+
+  <menuitem name="Alumnos" id="menu_item_alumnos" parent="personas_instituto" action="alumnos_action_window"/>
+</odoo>
